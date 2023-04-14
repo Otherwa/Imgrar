@@ -16,7 +16,11 @@ with open(
     file.write(image_data)
 
 # compress
-pngquant.config("C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\pngquant\\pngquant.exe")
+pngquant.config(
+    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\pngquant\\pngquant.exe",
+    min_quality=0,
+    max_quality=0,
+)
 pngquant.quant_image(
-    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png"
+    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png",
 )
