@@ -1,26 +1,28 @@
-from pygments import highlight
-import pngquant
-from pygments.lexers import PythonLexer
-from pygments.formatters import ImageFormatter
+from src.convertion import convert
+import argparse
 
-with open(
-    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\test.py", "rb"
-) as file:
-    code = file.read()
-lexer = PythonLexer()
-formatter = ImageFormatter(font_name="Courier New", font_size=16)
-image_data = highlight(code, lexer, formatter)
-with open(
-    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png", "wb"
-) as file:
-    file.write(image_data)
+# create the argument parser
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        prog="ImgRar v1.0",
+        description="Convert Small-Medium codes to Images And Vice-Versa",
+    )
 
-# compress
-pngquant.config(
-    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\pngquant\\pngquant.exe",
-    min_quality=0,
-    max_quality=0,
-)
-pngquant.quant_image(
-    "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png",
-)
+    parser.add_argument("-output", "--Output", help="Set Output Directory")
+    parser.add_argument("-input", "--Input", help="Set Input Directory")
+    parser.add_argument("-intp", "--Intp", help="Set Png Quantnt Interpreter Path")
+
+    print(parser.prog)
+    print(parser.description)
+    print("covert.py -h or convert.py --help for usage information")
+
+    # parse the arguments
+    args = parser.parse_args()
+
+    if args.Input and args.Output and args.Intp:
+        obj = convert(args.Input, args.Output, args.Intp)
+        obj.code2png()
+    elif args.Input and args.Output and args.Intp:
+        print("covert.py -h or convert.py --help for usage")
+    else:
+        (":print")

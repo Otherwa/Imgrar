@@ -20,3 +20,4 @@ pngquant.config("C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\pngquant\\pngquant.ex
 pngquant.quant_image(
     "C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png"
 )
+# lol

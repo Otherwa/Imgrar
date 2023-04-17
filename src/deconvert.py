@@ -2,10 +2,13 @@ import pytesseract
 from PIL import Image
 
 
-pytesseract.pytesseract.tesseract_cmd = (
+__pytesseract__path__ = (
     "C:\\Users\\athar\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
 )
-img = Image.open("C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\test\\convert.png")
+
+
+pytesseract.pytesseract.tesseract_cmd = __pytesseract__path__
+img = Image.open("C:\\Users\\athar\\OneDrive\\Desktop\\Dev\\Imgrar\\out")
 img = img.convert("L")
 text = pytesseract.image_to_string(img)
 print(text)
