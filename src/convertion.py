@@ -42,3 +42,4 @@ class convert:
             print("\n" + filename + " ✅", end="\n")
 
             sleep(1)
+        print("\nDone 🤖✅")

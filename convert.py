@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
     print(parser.prog)
     print(parser.description)
-    print("covert.py -h or convert.py --help for usage information")
 
     # parse the arguments
     args = parser.parse_args()
