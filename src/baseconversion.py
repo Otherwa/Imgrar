@@ -1,7 +1,17 @@
+from functools import reduce
 import pytesseract
 from PIL import Image
 import os
 from time import sleep
+
+
+def factors(n):
+    factors = []
+    for i in range(1, n + 1):
+        if (n % i) == 0:
+            factors.append(i)
+            print(i, end=" ")
+    return factors
 
 
 class baseconversion:
@@ -20,7 +30,12 @@ class baseconversion:
             with open(filepath, "r") as f:
                 data = f.read()
             binary_data = bytes(data, "utf-8")
-            img = Image.frombytes("L", (len(binary_data)//2, len(binary_data)//2), binary_data)
+            print(len(binary_data))
+            sizes = factors(len(binary_data))
+            img = Image.frombytes(
+                "L", (sizes[len(sizes) // 2], sizes[len(sizes) // 2 - 1]), binary_data
+            )
+            print(img.size)
             img.save(os.path.join(self.outfolder, filename) + ".png")
             for i in range(5):
                 print(".", end="")
@@ -39,5 +54,5 @@ class baseconversion:
             file = filename.split(".")
             file = file[0] + "." + file[1]
             with open(os.path.join(self.infolder, file), "w") as f:
-                f.write(text_data)
+                f.writelines(text_data)
             print(filepath + " Done ✅")
