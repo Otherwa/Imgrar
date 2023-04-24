@@ -20,7 +20,7 @@ class baseconversion:
             with open(filepath, "r") as f:
                 data = f.read()
             binary_data = bytes(data, "utf-8")
-            img = Image.frombytes("L", (len(binary_data), 1), binary_data)
+            img = Image.frombytes("L", (len(binary_data)//2, len(binary_data)//2), binary_data)
             img.save(os.path.join(self.outfolder, filename) + ".png")
             for i in range(5):
                 print(".", end="")
