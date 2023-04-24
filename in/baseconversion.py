@@ -30,7 +30,7 @@ class baseconversion:
             print(f"File Bytes : {len(binary_data)}")
             sizes = factors(len(binary_data))
             img = Image.frombytes(
-                "L", (sizes[len(sizes) // 2], sizes[len(sizes) // 2 - 1]), binary_data
+                "L", (sizes[len(sizes) // 2 - 1], sizes[len(sizes) // 2]), binary_data
             )
             print(f"Image dim : {img.size}")
             img.save(os.path.join(self.outfolder, filename) + ".png")
