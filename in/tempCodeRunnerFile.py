@@ -24,3 +24,4 @@ pngquant.config(
 #     print("\n" + filename + " ✅", end="\n")
 
 #     sleep(1)
+   

@@ -69,3 +69,4 @@ class convert:
             with open(self.infolder + file[0] + "." + file[1], "w") as file:
                 file.write(text)
             print(filepath + " Done ✅")
+        

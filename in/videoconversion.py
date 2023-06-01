@@ -17,3 +17,4 @@ for image in images:
 
 cv2.destroyAllWindows()
 video.release()
+     

@@ -52,3 +52,4 @@ class baseconversion:
             print(f"Image dim : {img.size}")
             print(filename + " ✅\n", end="\n")
             print(filepath + " Done ✅")
+  
