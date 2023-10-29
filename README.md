@@ -51,7 +51,7 @@ To use ImgRar, follow these steps:
 
 4. Run the ImgRar tool:
    ```
-   python img_rar.py [options]
+   python convert.py [options]
    ```
 
 ## Options
@@ -67,12 +67,12 @@ Example usages:
 - To convert code to PNG image:
 
   ```
-  python img_rar.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256|num]
+  python convert.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256|num]
   ```
 
 - To convert PNG image to code:
   ```
-  python img_rar.py -input input_dir -output output_dir -png2code
+   python convert.py -input [./input_dir] -output [./output_dir] -png2code [1|true] -fsize [256|num]
   ```
 
 ## Installation
