@@ -3,6 +3,7 @@
 ImgRar is a tool for converting small to medium-sized codes to images and vice-versa. This tool provides a simple command-line interface to perform these conversions.
 
 ## Table of Contents
+
 - [Features](#features)
 - [Requirements](#requirements)
 - [Usage](#usage)
@@ -11,29 +12,35 @@ ImgRar is a tool for converting small to medium-sized codes to images and vice-v
 - [License](#license)
 
 ## Features
+
 - Convert code to PNG image.
 - Convert PNG image to code.
 - Specify input and output directories.
 - Set the frame size for image conversion.
 
 ## Requirements
+
 - Python 3.x
 - Dependencies listed in `requirements.txt`
 
 ## Usage
+
 To use ImgRar, follow these steps:
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/yourusername/ImgRar.git
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd ImgRar
    ```
 
 3. Install the required dependencies:
+
    ```
    pip install -r requirements.txt
    ```
@@ -44,6 +51,7 @@ To use ImgRar, follow these steps:
    ```
 
 ## Options
+
 - `-output`, `--Output`: Set the output directory.
 - `-input`, `--Input`: Set the input directory.
 - `-code2png`, `--Code2Png`: Convert from code to PNG image.
@@ -51,20 +59,24 @@ To use ImgRar, follow these steps:
 - `-fsize`, `--fsize`: Set the frame size.
 
 Example usages:
+
 - To convert code to PNG image:
-   ```
-   python img_rar.py -input input_dir -output output_dir -code2png -fsize 256
-   ```
+
+  ```
+  python img_rar.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256|num]
+  ```
 
 - To convert PNG image to code:
-   ```
-   python img_rar.py -input input_dir -output output_dir -png2code
-   ```
+  ```
+  python img_rar.py -input input_dir -output output_dir -png2code
+  ```
 
 ## Installation
+
 You can install this tool by cloning the GitHub repository and installing the required dependencies as mentioned in the [Usage](#usage) section.
 
 ## License
+
 This project is licensed under the XYZ License - see the [LICENSE.md](LICENSE.md) file for details.
 
 Feel free to fork and contribute to this project. If you encounter any issues or have suggestions, please open an issue on GitHub.
