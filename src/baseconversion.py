@@ -34,7 +34,7 @@ class baseconversion:
         print("Code 2 Photo\n")
         for filename in os.listdir(self.infolder):
             filepath = os.path.join(self.infolder, filename)
-            with open(filepath, "r") as f:
+            with open(filepath, "r", encoding="utf-8") as f:
                 data = f.read()
             binary_data = bytes(data, "utf-8")
             print(f"File Bytes : {len(binary_data)}")
