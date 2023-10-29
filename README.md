@@ -81,6 +81,4 @@ You can install this tool by cloning the GitHub repository and installing the re
 
 ## License
 
-This project is licensed under the XYZ License - see the [LICENSE.md](LICENSE.md) file for details.
-
-Feel free to fork and contribute to this project. If you encounter any issues or have suggestions, please open an issue on GitHub.
+This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details.
