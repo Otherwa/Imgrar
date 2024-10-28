@@ -67,12 +67,12 @@ Example usages:
 - To convert code to PNG image:
 
   ```
-  python convert.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256|num]
+  python convert.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256*256|num]
   ```
 
 - To convert PNG image to code:
   ```
-   python convert.py -input [./input_dir] -output [./output_dir] -png2code [1|true] -fsize [256|num]
+   python convert.py -input [./input_dir] -output [./output_dir] -png2code [1|true] -fsize [256*256|num]
   ```
 
 ## Installation

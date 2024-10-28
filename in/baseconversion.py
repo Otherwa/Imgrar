@@ -34,7 +34,7 @@ class baseconversion:
         print("Code 2 Photo\n")
         for filename in os.listdir(self.infolder):
             filepath = os.path.join(self.infolder, filename)
-            with open(filepath, "r") as f:
+            with open(filepath, "r", encoding="utf-8") as f:
                 data = f.read()
             binary_data = bytes(data, "utf-8")
             print(f"File Bytes : {len(binary_data)}")
@@ -50,6 +50,7 @@ class baseconversion:
     def png2code(self):
         print("Photo 2 Code\n")
         for filename in os.listdir(self.outfolder):
+            print(filename)
             img = Image.open(os.path.join(self.outfolder, filename))
             binary_data = img.tobytes()
             text_data = binary_data.decode("utf-8")
@@ -59,4 +60,3 @@ class baseconversion:
                 f.writelines(text_data)
             print(f"Image dim : {img.size}")
             print(filename + " ✅\n", end="\n")
-                                                                                                                                               

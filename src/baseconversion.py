@@ -50,6 +50,7 @@ class baseconversion:
     def png2code(self):
         print("Photo 2 Code\n")
         for filename in os.listdir(self.outfolder):
+            print(filename)
             img = Image.open(os.path.join(self.outfolder, filename))
             binary_data = img.tobytes()
             text_data = binary_data.decode("utf-8")
