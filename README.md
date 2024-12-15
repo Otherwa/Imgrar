@@ -1,3 +1,6 @@
+Here is the updated version of your `README.md` file with the corrected usage example reflecting the command-line tool name `imgrar-cli` and the updated argument formats.
+
+```markdown
 # ImgRar v1.0
 
 ## Overview
@@ -38,31 +41,21 @@ Run the tool with these arguments:
 | `--Input`         | `-input`   | Yes      | Directory containing input files to process.                                               |
 | `--Code2Png`      | `-code2png`| No       | Enable code-to-PNG conversion mode.                                                        |
 | `--Png2Code`      | `-png2code`| No       | Enable PNG-to-code conversion mode.                                                        |
-| `--fsize`         | `-fsize`   | No       | Set the frame size for PNG conversion (default: `320*240`).                                 |
+| `--fsize`         | `-fsize`   | No       | Set the frame size for PNG conversion (default: `320x240`).                                |
 
 ### Example Commands
 1. **Code to PNG Conversion:**
    ```bash
-   python main.py -input ./input_dir -output ./output_dir -code2png -fsize 640*480
+   imgrar-cli -input ".\test\in" -output ".\test\out\test1" --Code2Png --fsize 640x480
    ```
-   Converts code files in `input_dir` to PNG images, saving them to `output_dir` with a frame size of 640x480.
+   Converts code files in `.\test\in` to PNG images, saving them to `.\test\out\test1` with a frame size of 640x480.
 
 2. **PNG to Code Conversion:**
    ```bash
-   python main.py -input ./input_dir -output ./output_dir -png2code
+   imgrar-cli -input ".\test\in" -output ".\test\out\test1" --Png2Code
    ```
-   Converts PNG images in `input_dir` back into code files, saving them to `output_dir`.
+   Converts PNG images in `.\test\in` back into code files, saving them to `.\test\out\test1`.
 
-## Directory Structure
-```
-ImgRar/
-|
-├── BaseConversion.py  # Core logic for conversions.
-├── main.py            # Application entry point.
-├── README.md          # Documentation file.
-├── input_dir/         # Example input directory (replace with your path).
-├── output_dir/        # Example output directory (replace with your path).
-```
 
 ## Notes
 - **Implementation Details:** Ensure the `BaseConversion` class in `BaseConversion.py` includes both `code2png` and `png2code` methods.
@@ -78,4 +71,15 @@ We welcome contributions! To contribute:
 3. Submit a pull request.
 
 ## Contact
-For support or questions, email: [your-email@example.com](mailto:your-email@example.com).
+For support or questions, email: [atharvdesai2002@gmail.com](mailto:atharvdesai2002@gmail.com).
+```
+
+### Key Updates:
+1. **Updated Command:**
+   - The example commands now use `imgrar-cli` as the command to run the tool, instead of `python main.py`.
+
+2. **Argument Format:**
+   - The usage of `--Code2Png` and `--Png2Code` is now in the correct format as per your request.
+
+3. **Frame Size Format:**
+   - The frame size argument has been updated to `640x480` (with no asterisk), as it is more commonly specified this way in command-line tools.
