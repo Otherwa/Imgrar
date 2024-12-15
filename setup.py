@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Imgrar",  # Package name
-    version="1.0.1",  # Version
+    version="1.1.0",  # Version
     packages=find_packages(where="src"),  # Automatically finds packages inside 'src'
     package_dir={"": "src"},  # Tells setuptools to look for packages under 'src'
     author="Atharv Desai",

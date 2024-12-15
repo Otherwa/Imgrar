@@ -1,7 +1,7 @@
 Here is the updated version of your `README.md` file with the corrected usage example reflecting the command-line tool name `imgrar-cli` and the updated argument formats.
 
 ```markdown
-# ImgRar v1.0
+# ImgRar v1.1.0
 
 ## Overview
 ImgRar is a versatile command-line tool for:
