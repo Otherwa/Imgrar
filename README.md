@@ -1,84 +1,139 @@
-# ImgRar v1.0
+ImgRar v1.0
 
-![baseconversion py](https://github.com/Otherwa/Imgrar/assets/67428572/348e23c9-486e-4a58-96fe-f290f1697068)
-![convert py](https://github.com/Otherwa/Imgrar/assets/67428572/1ef03222-8e7c-4c17-a3fe-4d32176d7534)
+Overview
 
+ImgRar is a command-line tool designed for:
 
-ImgRar is a tool for converting small to medium-sized codes to images and vice-versa. This tool provides a simple command-line interface to perform these conversions.
+Converting small-to-medium codes into PNG images.
 
-## Table of Contents
+Converting PNG images back into their original codes.
 
-- [Features](#features)
-- [Requirements](#requirements)
-- [Usage](#usage)
-- [Options](#options)
-- [Installation](#installation)
-- [License](#license)
+Preparing PNG files to create MP4 videos (future functionality can be added).
 
-## Features
+Features
 
-- Convert code to PNG image.
-- Convert PNG image to code.
-- Specify input and output directories.
-- Set the frame size for image conversion.
+Code to PNG Conversion: Transform your codes into visually encoded PNG images.
 
-## Requirements
+PNG to Code Conversion: Extract and decode codes stored in PNG images.
 
-- Python 3.x
-- Dependencies listed in `requirements.txt`
+Custom Frame Size: Set a frame size for PNG images during the conversion process.
 
-## Usage
+Input and Output Directories: Specify directories for input files and saving output results.
 
-To use ImgRar, follow these steps:
+Requirements
 
-1. Clone the repository:
+Python 3.6+
 
-   ```
-   git clone https://github.com/yourusername/ImgRar.git
-   ```
+Required libraries:
 
-2. Navigate to the project directory:
+argparse
 
-   ```
-   cd ImgRar
-   ```
+os
 
-3. Install the required dependencies:
+Installation
 
-   ```
-   pip install -r requirements.txt
-   ```
+Clone the repository:
 
-4. Run the ImgRar tool:
-   ```
-   python convert.py [options]
-   ```
+git clone <https://github.com/your-repo/ImgRar.git>
 
-## Options
+Navigate to the project directory:
 
-- `-output`, `--Output`: Set the output directory.
-- `-input`, `--Input`: Set the input directory.
-- `-code2png`, `--Code2Png`: Convert from code to PNG image.
-- `-png2code`, `--Png2Code`: Convert from PNG image to code.
-- `-fsize`, `--fsize`: Set the frame size.
+cd ImgRar
 
-Example usages:
+Install dependencies (if any additional modules are required).
 
-- To convert code to PNG image:
+Usage
 
-  ```
-  python convert.py -input [./input_dir] -output [./output_dir] -code2png [1|true] -fsize [256*256|num]
-  ```
+Command-Line Arguments
 
-- To convert PNG image to code:
-  ```
-   python convert.py -input [./input_dir] -output [./output_dir] -png2code [1|true] -fsize [256*256|num]
-  ```
+Run the script with the following arguments:
 
-## Installation
+Argument
 
-You can install this tool by cloning the GitHub repository and installing the required dependencies as mentioned in the [Usage](#usage) section.
+Short Form
 
-## License
+Required
 
-This project is licensed under the BSD License - see the [LICENSE.md](LICENSE) file for details.
+Description
+
+--Output
+
+-output
+
+Yes
+
+Directory to save the output files.
+
+--Input
+
+-input
+
+Yes
+
+Directory containing input files to process.
+
+--Code2Png
+
+-code2png
+
+No
+
+Enable code-to-PNG conversion mode.
+
+--Png2Code
+
+-png2code
+
+No
+
+Enable PNG-to-code conversion mode.
+
+--fsize
+
+-fsize
+
+No
+
+Set the frame size for PNG conversion (default: 320*240).
+
+Example Commands
+
+Code to PNG Conversion:
+
+python main.py -input ./input_dir -output ./output_dir -code2png -fsize 640*480
+
+Converts code files in input_dir to PNG images, saving them to output_dir with a frame size of 640x480.
+
+PNG to Code Conversion:
+
+python main.py -input ./input_dir -output ./output_dir -png2code
+
+Converts PNG images in input_dir back into code files, saving them to output_dir.
+
+Directory Structure
+
+ImgRar/
+|
+├── BaseConversion.py  # Contains the core logic for conversions.
+├── main.py            # Entry point for the application.
+├── README.md          # Documentation file.
+├── input_dir/         # Example input directory (replace with your path).
+├── output_dir/        # Example output directory (replace with your path).
+
+Notes
+
+Ensure the BaseConversion class is implemented in BaseConversion.py with the code2png and png2code methods.
+
+Use valid input files for conversion.
+
+License
+
+This project is licensed under the MIT License. See LICENSE for more details.
+
+Contribution
+
+Contributions are welcome! Feel free to fork the project and submit a pull request.
+
+Contact
+
+For questions or issues, contact: <atharvdesai2002@gmail.com>.

@@ -1,10 +1,10 @@
 import os
 import argparse
-from src.BaseConversion import Baseconversion
+from .BaseConversion import Baseconversion
 
 
-# Create the argument parser
-if __name__ == "__main__":
+def main():
+    # Create the argument parser
     parser = argparse.ArgumentParser(
         prog="ImgRar v1.0",
         description="Convert Small-Medium codes to Images and vice versa, or compile a series of images into an MP4 video.",
@@ -28,43 +28,12 @@ if __name__ == "__main__":
         help="Convert from PNG Image to Code",
     )
     parser.add_argument(
-        "-imagetomp4",
-        "--ImageToMp4",
-        action="store_true",
-        help="Convert a series of images to MP4 video",
-    )
-    parser.add_argument(
-        "-mp42images",
-        "--Mp42Images",
-        action="store_true",
-        help="Convert MP4 video to a series of images",
-    )
-    parser.add_argument(
         "-fsize",
         "--fsize",
         default="320*240",
         help="Frame size for Code to PNG conversion (default: 320*240)",
     )
-    parser.add_argument(
-        "-framerate",
-        "--FrameRate",
-        type=int,
-        default=24,
-        help="Frame rate for MP4 video",
-    )
-    parser.add_argument(
-        "-framesize",
-        "--FrameSize",
-        default="640*480",
-        help="Frame size for MP4 video (e.g., 640*480)",
-    )
-    parser.add_argument(
-        "-frameinterval",
-        "--FrameInterval",
-        type=int,
-        default=1,
-        help="Interval for frames extracted from MP4 video (default: 1, means every frame)",
-    )
+
 
     # Parse the arguments
     args = parser.parse_args()
