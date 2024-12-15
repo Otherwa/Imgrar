@@ -1,8 +1,7 @@
 import os
 import argparse
-from src.baseconversion import baseconversion
-from src.imagetomp4 import ImageToVideoConverter
-from src.imagetomp4 import VideoToImagesConverter  # Import the new class
+from src.BaseConversion import Baseconversion
+
 
 # Create the argument parser
 if __name__ == "__main__":
@@ -76,36 +75,9 @@ if __name__ == "__main__":
     # Run Code2Png or Png2Code conversion if specified
     if args.Code2Png or args.Png2Code:
         frame_size = args.fsize if args.fsize else "320*240"
-        objbase = baseconversion(args.Input, args.Output, frame_size)
+        objbase = Baseconversion(args.Input, args.Output, frame_size)
 
         if args.Code2Png:
             objbase.code2png()
         if args.Png2Code:
             objbase.png2code()
-
-    # Run Image to MP4 conversion if specified
-    elif args.ImageToMp4:
-        # Convert frame size from string to tuple
-        frame_size = tuple(map(int, args.FrameSize.split("*")))
-
-        # Initialize and run the ImageToVideoConverter
-        converter = ImageToVideoConverter(
-            input_folder=args.Input,
-            output_folder=args.Output,
-            video_filename="output_video.mp4",
-            frame_rate=args.FrameRate,
-            frame_size=frame_size,
-        )
-        converter.convert()
-
-    # Run MP4 to images conversion if specified
-    elif args.Mp42Images:
-        video_file = os.path.join(args.Input)  # Assuming Input is the path to the video
-        converter = VideoToImagesConverter(
-            video_file, args.Output, frame_interval=args.FrameInterval
-        )
-        converter.convert()
-    else:
-        print(
-            "Please specify a valid option: -code2png, -png2code, -imagetomp4, or -mp42images."
-        )
